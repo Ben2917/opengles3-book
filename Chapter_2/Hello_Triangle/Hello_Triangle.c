@@ -176,11 +176,17 @@ int Init ( ESContext *esContext )
 void Draw ( ESContext *esContext )
 {
    UserData *userData = esContext->userData;
-   GLfloat vVertices[] = {  0.0f,  0.5f, 0.0f,
+   GLfloat vVertices[] = {  -0.5f,  0.5f, 0.0f,
                             -0.5f, -0.5f, 0.0f,
                             0.5f, -0.5f, 0.0f
                          };
 
+   /*GLfloat vVertices[] = {  0.5f,  0.5f, 0.0f,
+                            -0.5f, 0.5f, 0.0f,
+                            -0.5f, -0.5f, 0.0f,
+                            0.5f, -0.5f, 0.0f
+                         };*/
+                         
    // Set the viewport
    glViewport ( 0, 0, esContext->width, esContext->height );
 
@@ -208,7 +214,7 @@ int esMain ( ESContext *esContext )
 {
    esContext->userData = malloc ( sizeof ( UserData ) );
 
-   esCreateWindow ( esContext, "Hello Triangle", 320, 240, ES_WINDOW_RGB );
+   esCreateWindow ( esContext, "Hello Triangle", 1920, 1200, ES_WINDOW_RGB );
 
    if ( !Init ( esContext ) )
    {
